@@ -1,0 +1,48 @@
+version: "3.1"
+
+intents:
+  - start
+  - greet
+  - ask_capability
+  - navigation
+  - navigation_list
+  - unavailable_page
+  - confirm
+  - deny
+  - thank
+  - goodbye
+
+responses:
+  utter_intro:
+  - text: "Hi! I'm Alex. How can I help you today?"
+
+  utter_greet:
+  - text: "Hi! I'm here to assist you."
+
+  utter_capability:
+  - text: "I can help you to find resources from this website"
+
+  utter_if_right_page:
+  - text: "Is this the page you wanted?"
+
+  utter_happy:
+  - text: "Great!!! Let me know if you need anything else."
+
+  utter_additional_clarification:
+  - text: "I would appreciate it if you could provide additional clarification on your request."
+
+  utter_welcome:
+  - text: "You are welcome"
+
+  utter_unavailability:
+  - text: "I'm sorry, we don't have requested resource."
+
+  utter_navigation_list:
+  - text: "Following are the pages that are related to your request. Please choose what you need."
+
+  utter_goodbye:
+  - text: "Good bye! Have a nice day."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

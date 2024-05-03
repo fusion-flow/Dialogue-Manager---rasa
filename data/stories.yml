@@ -1,0 +1,121 @@
+  version: "3.1"
+
+  stories:
+
+  - story: start path
+    steps:
+    - intent: start
+    - action: utter_intro
+
+  - story: greet path
+    steps:
+    - intent: greet
+    - action: utter_greet
+
+  - story: capability path
+    steps:
+    - intent: ask_capability
+    - action: utter_capability
+
+  - story: navigation correct path
+    steps:
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: confirm
+    - action: utter_happy
+
+  - story: navigation incorrect path 1
+    steps:
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_additional_clarification
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_unavailability
+
+  - story: navigation incorrect path 2
+    steps:
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_additional_clarification
+    - intent: navigation_list
+    - action: utter_navigation_list
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_unavailability
+
+  - story: navigation incorrect path 3
+    steps:
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_additional_clarification
+    - intent: unavailable_page
+    - action: utter_unavailability
+
+  - story: navigation list correct path
+    steps:
+    - intent: navigation_list
+    - action: utter_navigation_list
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: confirm
+    - action: utter_happy
+
+  - story: navigation list incorrect path 1
+    steps:
+    - intent: navigation_list
+    - action: utter_navigation_list
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_additional_clarification
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_unavailability
+
+  - story: navigation list incorrect path 2
+    steps:
+    - intent: navigation_list
+    - action: utter_navigation_list
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_additional_clarification
+    - intent: navigation_list
+    - action: utter_navigation_list
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_unavailability
+
+  - story: navigation incorrect path 3
+    steps:
+    - intent: navigation_list
+    - action: utter_navigation_list
+    - intent: navigation
+    - action: utter_if_right_page
+    - intent: deny
+    - action: utter_additional_clarification
+    - intent: unavailable_page
+    - action: utter_unavailability
+
+  - story: page unavailable path
+    steps:
+    - intent: unavailable_page
+    - action: utter_unavailability
+
+  - story: appreciation path
+    steps:
+    - intent: thank
+    - action: utter_welcome
+
+  - story: goodbye path
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye

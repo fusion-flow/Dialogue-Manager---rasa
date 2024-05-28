@@ -7,12 +7,25 @@ In this project rasa core is trained to use as a dialogue manager. Intents, resp
 * Clone the code of dialogue manager from [https://github.com/fusion-flow/Dialogue-Manager---rasa.git](https://github.com/fusion-flow/Dialogue-Manager---rasa.git).
 * Create a virtual environment to run the code. (Python version=3.9.12).
 * Install rasa
-      `pip install rasa`
+      ```
+         pip install rasa
+      ```
 * Train rasa core
-      `rasa train core`
+      ```
+        rasa train core
+      ```
 * A trained rasa core model will be created in models directory. Change that model name to core.tar.gz in order to match with the Dockerfile.
+* You can locally run model using the following command.
+      ```rasa run --model models/core.tar.gz --enable-api```
+* Or you can build and run the docker image using following commands.
 * Build the docker image.
-      `docker build -t rasa-core .`
+      ```docker build -t rasa-core .```
 * Run the docker image.
-      `docker run -p 8080:8080 rasa-core`
-* Now you can call the api by sending post requests to http://localhost:8080/webhooks/rest/webhook and content should be in { "sender": "1", "message": "/greet"} format. And it will return the corresponding response.
+      ```docker run -p 8080:8080 rasa-core```
+* Then you can call use the following CURL command to send an intent to generate the response.
+    `curl --location 'http://localhost:8080/webhooks/rest/webhook' \
+       --header 'Content-Type: application/json' \
+       --data '{
+            "message": "/confirm"
+       }'`
+ 

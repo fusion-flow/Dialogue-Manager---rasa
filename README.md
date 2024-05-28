@@ -28,4 +28,12 @@ In this project rasa core is trained to use as a dialogue manager. Intents, resp
        --data '{
             "message": "/confirm"
        }'`
- 
+
+## Acknowledgement
+
+We would like to acknowledge the following repository of Rasa framework that used for the implementation of this project.
+
+- [Rasa](https://github.com/RasaHQ/rasa)
+
+The original work is licensed under the [Apache v2 license](http://www.apache.org/licenses/LICENSE-2.0)
+
